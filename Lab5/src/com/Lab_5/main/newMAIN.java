@@ -20,10 +20,19 @@ import java.util.LinkedList;
 import java.util.Locale;
 import java.util.Scanner;
 
+
 public class newMAIN {
 
+    /**
+     * Сканнер для чтения кадировки UTF8
+     */
     private static Scanner scan = new Scanner(System.in).useLocale(Locale.US);
 
+    /**
+     * Класс для проверки работы задумок
+     * @param args
+     * @throws IOException
+     */
     public static void main(String[] args) throws IOException {
 
         String fileStr = new FileReader().readFromFile("D:\\Denis\\Programs\\Java_codes\\Lab5\\src\\script1.txt");
@@ -31,10 +40,6 @@ public class newMAIN {
         System.out.println(fileStr);
     }
 
-    public static boolean keyReleased(KeyEvent e){
-        int key=e.getKeyCode();
-        return key==KeyEvent.VK_ENTER;
-    }
 }
 
 

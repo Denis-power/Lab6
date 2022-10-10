@@ -15,38 +15,74 @@ import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class InputValidation<T> {
 
+/**
+ * Прием валидных данных с консоли
+ */
+public class InputValidation {
+
+    /**
+     * Паттерн для имени персоны
+     */
     public static final String USERNAME_PATTERN =
             "^[A-Z0-9]([._-](?![._-])|[a-zA-Z0-9]){1,18}[a-zA-Z0-9.]$";
+    /**
+     * Паттерн для имени машины
+     */
     public static final String CARNAME_PATTERN =
             "^([._ -](?![._ -])|[a-zA-Z0-9]){2,40}$";
 
-    public static void comandValidationOneArg(LinkedList<String> scripts) throws InputCountOfArgumentsException{
-        if (scripts.get(0).split(" ").length > 1)//чисто команда
+    /**
+     * Проверка на то, что введенная команда содержит только одно слово
+     * @param commands
+     * @throws InputCountOfArgumentsException
+     */
+    public static void comandValidationOneArg(LinkedList<String> commands) throws InputCountOfArgumentsException{
+        if (commands.get(0).split(" ").length > 1)//чисто команда
             throw new InputCountOfArgumentsException();
     }
 
-    public static long comandValidationSecondLong(LinkedList<String> scripts) throws InvalidLongException {
+    /**
+     * Проверка на то, что введенная команда содержит второй переменной значение числа long
+     * @param commands
+     * @return прочитанное число long, если содержит
+     * @throws InvalidLongException
+     */
+    public static long comandValidationSecondLong(LinkedList<String> commands) throws InvalidLongException {
         try{
-            return Long.parseLong(scripts.get(0).split(" ")[1]);// чисто команда с аргументом long
+            return Long.parseLong(commands.get(0).split(" ")[1]);// чисто команда с аргументом long
         }
         catch(Exception ex) {
             throw new InvalidLongException();
         }
     }
 
+
+    /**
+     * Провера на то, что строка команды содержит из названия и аргумента
+     * @param commands
+     */
     public static void comandValidaionSecondString(LinkedList<String> commands){
         String[] temp = commands.get(0).trim().split(" ");
         if(temp.length != 2)
             throw new InputCountOfArgumentsException();
     }
+
+    /**
+     * Чтение команды из консоли
+     * @param scan
+     * @return String прочитанная команда
+     */
     protected static String commandValidation(Scanner scan){
         System.out.println("Enter command: ");
-//        LinkedList<String> commands = new LinkedList<>();
-//        commands.add(scan.nextLine().trim());
         return scan.nextLine().trim();
     }
+
+    /**
+     * Чтение имени, чтобы подходило под условия
+     * @param scan
+     * @return name
+     */
     protected static String nameVailidation(Scanner scan){
         System.out.println("Name requirments:\n" +
                 "1. Start with uppercase letter or number and end with alphanumeric character or dot(.).\n" +
@@ -67,6 +103,12 @@ public class InputValidation<T> {
         }
         return name;
     }
+
+    /**
+     * Чтение числа float, как координаты X
+     * @param scan
+     * @return float
+     */
     protected static float xcordinateValidation(Scanner scan){
         while (!scan.hasNextFloat()) {
             System.out.println("You entered not float number. Try again. Example: 8.8");
@@ -74,6 +116,12 @@ public class InputValidation<T> {
         }
         return scan.nextFloat();
     }
+
+    /**
+     * Чтение числа int, как координаты Y
+     * @param scan
+     * @return int
+     */
     protected static int ycordinateValidation(Scanner scan){
         while (!scan.hasNextInt()) {
             System.out.println("You entered not int number. Try again. Example: 8");
@@ -82,6 +130,11 @@ public class InputValidation<T> {
         return scan.nextInt();
     }
 
+    /**
+     * Чтение ответа на вопрос, является ли person Real Hero
+     * @param scan
+     * @return boolean
+     */
     protected static boolean realHeroValidation(Scanner scan){
         System.out.println("The person is real Hero?");
         return YESorNO(scan);

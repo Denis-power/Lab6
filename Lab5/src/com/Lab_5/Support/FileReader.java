@@ -7,8 +7,18 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
+/**
+ *Класс для чтения данных из файла с помощью библиотеки BufferedInputStream
+ */
 public class FileReader implements ReadFromFile {
 
+    /**
+     * Метод для чтения данных из файла
+     * @param filename
+     * @return данные файла в форме String
+     * @throws FileNotFoundException
+     * @throws IOException
+     */
     public String readFromFile(String filename) throws FileNotFoundException, IOException {
 
         try {
