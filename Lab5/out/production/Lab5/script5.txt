@@ -1,0 +1,10 @@
+average_of_minutes_of_waiting
+remove_by_id 16
+yes
+remove_first
+yes
+remove_head
+yes
+show
+update 3
+help

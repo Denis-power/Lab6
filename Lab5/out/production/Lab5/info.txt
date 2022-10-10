@@ -1,0 +1,4 @@
+D:\Denis\Programs\Java_codes\Lab5\src\collection.json
+execute_script D:\Denis\Programs\Java_codes\Lab5\src\script3.txt
+execute_script D:\Denis\Programs\Java_codes\Lab5\src\script4.txt
+execute_script D:\Denis\Programs\Java_codes\Lab5\src\scriptIllegalCommands.txt

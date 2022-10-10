@@ -1,0 +1,20 @@
+add
+Lucky
+5.12
+4
+yes
+yes
+19
+
+50
+sadness
+yes
+Chevrolet Corvette Z06
+yes
+help
+show
+remove_greater 1
+yes
+execute_script D:\Denis\Programs\Java_codes\Lab5\src\scriptIllegal2.txt
+
+
