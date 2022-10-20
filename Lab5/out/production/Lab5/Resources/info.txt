@@ -1,0 +1,18 @@
+D:\Denis\Programs\Java_codes\Lab5\src\collection.json
+execute_script D:\Denis\Programs\Java_codes\Lab5\src\script3.txt
+execute_script D:\Denis\Programs\Java_codes\Lab5\src\script4.txt
+execute_script D:\Denis\Programs\Java_codes\Lab5\src\scriptIllegalCommands.txt
+
+add
+Rey
+5
+4
+yes
+yes
+19
+019
+50
+apathy
+yes
+Chevrolet Corvette Z06
+yes
